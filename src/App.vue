@@ -13,30 +13,18 @@
 
 <script setup>
 import { onMounted } from 'vue';
-import { login, newTask } from './api'
-
+import { login, newTask } from './api/index'
 
 onMounted(async () => {
-    const id = await login('gj19852019@gmail.com', '1234567');
-    newTask({
-      user_id: id,
-      title: 'Titulo',
-      description: 'descripcion del task',
-    })
+
+    // const id = await login('gj19852019@gmail.com', '1234567');
+    // newTask({
+    //   user_id: id,
+    //   title: 'Titulo',
+    //   description: 'descripcion del task',
+    // })
+    
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 <style scoped>
