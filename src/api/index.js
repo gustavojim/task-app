@@ -5,6 +5,8 @@ export const supabase = createClient(
   import.meta.env.VITE_SUPABASE_KEY
 );
 
+
+
 // REGISTRO
 
 export const registro = async (email, password) => {
@@ -73,7 +75,21 @@ export const deleteTask = async (taskId) => {
       }
 
 export const logOut = async () => {
+
     const response = await supabase.auth.signOut()
     if (response.error) return false
     else return true; 
 }
+
+//Lunes
+
+export const statusTask = async (taskId, estado) => {
+  const response = await supabase
+    .from("task")
+    .update({
+      // title: titulo,
+      // description: descripcion,
+      isCreated: estado,
+    })
+    .eq("id", taskId);
+  }
