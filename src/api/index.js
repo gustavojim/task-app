@@ -11,9 +11,11 @@ export const registro = async (email, password) => {
   const response = await supabase.auth.signUp({
     email,
     password,
-  });
-  // TODO identificar el result y retornar lo que interesa
-};
+  })
+  console.log(result)
+  if (result.error) return false
+  else return true;
+}
 
 // LOGIN
 export const login = async (email, password) => {
@@ -21,34 +23,34 @@ export const login = async (email, password) => {
     email,
     password,
   });
-  return response.data.user.id;
-};
+  if (response.error) return false
+   else return response.data.user.id
+}
 
 //crear task
 export const newTask = async (task) => {
   const response = await supabase.from("task").insert(task);
-  // TODO identificar respuesta y retornar lo que necesitamos - true or false si se inserto o no
   console.log(response);
-};
+  if (response.error) return false
+  else return true;
+}
 
 // obtendremos las task
+
+
 export const getTasks = async () => {
   const response = await supabase
     .from("task")
     .select("*")
     .order("id", { ascending: false });
   console.log(response);
-  // TODO Retornar la info de los tasks - response.data
-};
-
+  if (response.error) return false
+  else return response.data;
+}
 
 //Actualizar task
-/*
-task: {
-            title: 'Titulo modificado',
-            description: 'Descripcion del task modificado'
-        }
-*/
+
+
 
 export const updateTask = async (taskId, task) => {
 
@@ -56,22 +58,22 @@ export const updateTask = async (taskId, task) => {
         .from('task')
         .update(task)
         .eq('id', taskId)
-
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-    console.log(response)
-}
+        if (response.error) return false
+        else return true;  
+      }
 
 export const deleteTask = async (taskId) => {
     const response = await supabase
         .from('task')
         .delete()
         .eq('id', taskId)
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-    console.log(response)
-}
+        console.log(response)
+        if (response.error) return false
+        else return true; 
+      }
 
 export const logOut = async () => {
     const response = await supabase.auth.signOut()
-    // TODO identificar el resulado y retornar lo que nos interesa, p.ej true si ha ido bien false si ha fallado
-    console.log(response)
+    if (response.error) return false
+    else return true; 
 }

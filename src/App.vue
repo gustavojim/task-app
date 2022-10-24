@@ -1,31 +1,28 @@
 <template>
   <h1>Task App</h1>
-  <ul>
-        <li>
-            <router-link :to="{name: 'home'}">Home</router-link>
-        </li>
-        <li>
-            <router-link :to="{name: 'login'}">Login</router-link>
-        </li>
-    </ul>
+  <NavBar></NavBar>
     <router-view></router-view>
 </template>
 
 <script setup>
 import { onMounted } from 'vue';
-import { login, newTask } from './api/index'
+import {createClient} from '@supabase/supabase-js'
+import NavBar from "../src/components/NavBar.vue"
+import { login, newTask} from './api'
+import { useAuthStore } from './store/auth'
+import { useRouter } from 'vue-router'
+
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY)
+const authStore = useAuthStore();
+const router = useRouter();
 
 onMounted(async () => {
-
-    // const id = await login('gj19852019@gmail.com', '1234567');
-    // newTask({
-    //   user_id: id,
-    //   title: 'Titulo',
-    //   description: 'descripcion del task',
-    // })
-    
+    if (!authStore.isAuth) {
+    router.push( {name: 'login'})
+}
 })
 
 </script>
+
 <style scoped>
 </style>
