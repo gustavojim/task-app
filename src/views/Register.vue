@@ -45,10 +45,7 @@
           </div>
           <div class="field">
             <div class="control">
-              <input
-                class="button is-link"
-                type="submit"
-                placeholder="Text input"
+              <input class="button is-link" type="submit" placeholder="Text input" value=""
               />
             </div>
           </div>

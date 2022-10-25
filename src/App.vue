@@ -1,5 +1,5 @@
 <template>
-  <h1>Task App</h1>
+  <h1></h1>
   <NavBar></NavBar>
     <router-view></router-view>
 </template>

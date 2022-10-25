@@ -2,11 +2,10 @@
 
 <h1>Home</h1>
 
-
 <div class= "container is-fluid is-max-tablet container-task ">
 <form class="box box-task" @submit.prevent="onSubmit">
     <br>
-  <h1>Add a new task:</h1>
+  <h1 class="text-task-repo-dos">Add a new task:</h1>
   <br>
   <input v-model="title" class="input" type="text" placeholder="Title" />
   <br>
@@ -19,8 +18,10 @@
   <button class="button is-dark is-rounded is-medium is-responsive">Save</button>
 </form>
 </div>
-
+<div>
+</div>
   <div class="container container-task-repo" >
+    <h1 class="text-task-repo">Your task repository:</h1>
 <div class="columns is-multiline is-mobile is-tablet ">
 	<div class="column-style column section-task " v-for="task in taskStore.tasks" :key="task.id">
 		<div v-if="!task.isCreated">
@@ -155,7 +156,7 @@ align-items: center;
 align-content: center;
 background-color: rgb(255, 255, 255);
 height: 730px;
-margin-bottom: -10%;
+margin-bottom: -5%;
 
 }
 
@@ -168,7 +169,7 @@ align-items: center;
 align-content: center;
 background-color: none;
 background-color:rgba(129, 150, 120, 0.307);
-margin-top: 30px;
+margin-top: 60px;
 padding-top: 20px;
 padding-bottom: 20px;
 }
@@ -196,6 +197,17 @@ padding-bottom: 20px;
 .container-task-repo {
 max-width: 700px;
 width: 75%;
+}
+
+.text-task-repo {
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 800;
+}
+.text-task-repo-dos {
+  text-align: center;
+  font-weight: 800;
+  color: white;
 }
 
 </style>
