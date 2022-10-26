@@ -1,8 +1,8 @@
-<template>
+<template class="background-total">
   <div class="container is-fluid container-general ">
     <div class="container container-login is-max-desktop">
       <div class="container container-login-dos is-fluid">
-        <!-- <progress class="progress is-medium is-dark" max="100">100%</progress> -->
+        
         <br />
         <h1 class="title">Task list!</h1>
         <h2 class="subtitle">A new order for your life!</h2>
@@ -17,28 +17,29 @@
             <div class="control">
               <input
                 v-model="email"
-                class="input is-danger is-focused"
+                class="input is-success is-focused"
                 type="email"
                 placeholder="email"
               />
             </div>
 
             <p v-if="emailError" class="help is-danger">
-              The email has an error
+              Check the email
             </p>
           </div>
 
-          <div class="field">
+          <div class="field ">
             <label class="label">Password</label>
-            <div class="control">
+            <div class="control ">
               <input
-                v-model="password"
+                v-model="password" class="is-success is-focused"
                 :class="{ input: true, 'is-danger': passwordError }"
+
                 type="password"
                 placeholder="password"
               />
               <p v-if="passwordError" class="help is-danger">
-                Problem with the password
+                Check the password
               </p>
             </div>
           </div>
@@ -111,7 +112,7 @@ const validarMail = () => {
 <style scoped>
 .container-login {
   margin-top: 50px;
-  background-color:rgb(129, 150, 120);
+  background-color:rgb(186, 193, 183);
   border-radius: 30px;
   padding: 20px;
   display: flex;
@@ -123,6 +124,9 @@ const validarMail = () => {
 
 .container-general {
   margin-bottom: 50px;
+  background-image: url(../Images/dot-background.jpg);
+  background-size: 30%;
+  padding: 50px;
 }
 .boton-registro {
   display: flex;
@@ -147,6 +151,8 @@ const validarMail = () => {
   color: white;
 margin-bottom: 10px;
 font-size: small;
-
 }
+
+
+
 </style>
