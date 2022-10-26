@@ -3,26 +3,30 @@
 
 <div class="card">
       <div v-if="!updateTask1" >
-    <header :class="{ 'card-header header': true, '': !task.done }" >
+    <header :class="{ 'title is-5 card-header header card-header-style': true, '': !task.done }" >
        <div class="container container-card ">
       
-        <p :class="{ 'done': task.done, '': !task.done }">          
+<div class="">
+        <p :class="{ 'title is-5 done': task.done, '': !task.done }">          
           {{ task.title }}
       </p>
-      
+</div> 
+
     </div>
 
     </header>
+
     <div :class="{ 'done': task.done, '': !task.done }">
       <div class="content subtitle is-6 content-style ">
           {{ task.description }}
      
 <div class="separacion"></div>
+
       </div>
 
-
-
     </div>
+
+
     <div class="">
     <footer class="field is-grouped box-buttons">
 
@@ -154,17 +158,12 @@
   
   .done {
     background-image: url("../Images/diagonal-background.png");
-    background-size: 90%;
+    background-size: 120%;
     background-position: center;
     border-radius: 5px;
+    opacity:0.4;
+    filter:alpha(opacity=40);
   }
-
-.done-card-header {
-    background-color: aquamarine;
-}
-
-
-
 
   .header {
       background-color: transparent;
@@ -185,7 +184,6 @@
 	border-radius: 5px;
 
 }
-
 
 .card-content {
 	background-color: rgba(255, 255, 255, 0.3);
@@ -213,7 +211,6 @@ display:none;
   max-width: 20%;
 }
 
-
 .box-buttons {
 max-width: 100%;
 display: flex;
@@ -238,7 +235,7 @@ margin: 5px;
 .card-edit-footer {
 display: flex;
 justify-content: center;
-background-color: rgb(171, 169, 160);
+background-color: rgb(201, 198, 189);
 margin-top: 5px;
 
 }
@@ -252,9 +249,12 @@ font-family: 'Roboto', sans-serif;
 }
 
 .card-header-style {
-    background-color: rgb(171, 169, 160);
+    background-color: rgb(228, 227, 221);
     margin-bottom: 5px;
     font-family: 'Roboto', sans-serif;
+    padding: 5px;
+
+    
 }
 
 

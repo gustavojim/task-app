@@ -354,7 +354,7 @@ div.done div {
     :key="task.id"
   >
   
-    <TaskList class="card-style" :task="task"/>
+    <TaskList :class="{ 'card-style-done': task.done, 'card-style': !task.done }" :task="task"/>
   
   </div>
 </div>
@@ -380,6 +380,10 @@ div.done div {
 </template>
 
 <script setup>
+
+
+
+
 import { ref, onMounted, computed } from "vue";
 import { logOut, getTasks, newTask, deleteTask } from "../api/index";
 import NavBar from "../components/NavBar.vue";
@@ -388,6 +392,21 @@ import { useAuthStore } from "../store/auth";
 import { storeToRefs } from "pinia";
 import { useTaskStore } from "../store/task";
 import TaskList from "../components/TaskList.vue";
+
+
+    document.addEventListener("DOMContentLoaded", function (event) {
+        var scrollpos = sessionStorage.getItem('scrollpos');
+        if (scrollpos) {
+            window.scrollTo(0, scrollpos);
+            sessionStorage.removeItem('scrollpos');
+        }
+    });
+
+    window.addEventListener("beforeunload", function (e) {
+        sessionStorage.setItem('scrollpos', window.scrollY);
+    });
+
+
 const taskStore = useTaskStore();
 const authStore = useAuthStore();
 const router = useRouter();
@@ -463,11 +482,16 @@ const clickToFilter3 = () => {
   return filter.value = 3
   
 }
-</script>
+
+
+
+        
+    </script>
 <style scoped>
 
 .section-first{
   background-image: url("../Images/dot-background.jpg");
+  background-blend-mode:hue;
   background-size: 40%;
 }
 
@@ -477,18 +501,6 @@ const clickToFilter3 = () => {
   color: #ffffff;
   padding: 7px;
 
-}
-
-.tasks-section {
-  margin: 30px;
-  
-}
-.add-button {
-  background-color:#027373;
- width: 40vw;
-  color: #0D0D0D;
-  padding: 30px;
-  font-weight: 600;
 }
 
 .container-button {
@@ -514,6 +526,13 @@ padding-bottom: 20px;
   margin: 10px;
   border-radius: 20px;
 } 
+
+.card-style-done {
+background-color:#ededed;
+border: 1PX;
+border-style:dashed;
+padding: 20px;
+}
 
 .card-style {
 background-color:white;
@@ -600,3 +619,4 @@ position:sticky;
 
 
 </style>
+
