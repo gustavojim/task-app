@@ -83,13 +83,13 @@ export const logOut = async () => {
 
 //Lunes
 
-export const statusTask = async (taskId, estado) => {
-  const response = await supabase
-    .from("task")
-    .update({
-      // title: titulo,
-      // description: descripcion,
-      isCreated: estado,
-    })
-    .eq("id", taskId);
-  }
+// export const statusTask = async (taskId, estado) => {
+//   const response = await supabase
+//     .from("task")
+//     .update({
+//       // title: titulo,
+//       // description: descripcion,
+//       isCreated: estado,
+//     })
+//     .eq("id", taskId);
+//   }
