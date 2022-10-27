@@ -36,14 +36,7 @@
         <br />
       </div>
 
-      <div class="column column-box-phrase">
-        <span class="title">
-          <span class="quote-style"
-            >" Ut venenatis, nisl scelerisque sollicitudin fermentum, quam
-            libero hendrerit ipsum, ut blandit est tellus sit amet turpis "
-          </span>
-        </span>
-      </div>
+
     </div>
   </div>
 
