@@ -89,6 +89,17 @@
       <h1 class="content is-small">Remember to come back soon!</h1>
     </div>
   </div>
+
+
+  <div class="footer footer-styler is-flex is-justify-content-center flex-direction-row">
+    <div class="columns is-multiline is-flex is-justify-content-center">
+<p class="columns tag tag-footer-style is-success is-normal"><i class="fa-solid fa-pen"></i>&nbsp;&nbsp;Creada por Gustavo Jiménez</p>
+<a class="columns tag tag-footer-style is-info is-normal" href="https://www.linkedin.com/in/gustavojimeneza/" ><i class="fa-brands fa-linkedin"> </i>&nbsp;&nbsp;Visita mi perdil de Linkedin </a>
+</div>
+</div>
+
+
+
 </template>
 
 <script setup>
@@ -278,6 +289,18 @@ const onClick = async () => {
   min-width: 290px;
   height: 70px;
 }
+
+.tag-footer-style {
+  margin: 5px;
+}
+
+.footer-styler {
+  background-image: url(../Images/diagonal-background-light.png);
+ 
+ 
+}
+
+
 
 @media (max-width: 1200px) {
   .column-box-phrase {

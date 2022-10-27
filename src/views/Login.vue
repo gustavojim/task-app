@@ -68,6 +68,15 @@
       </div>
     </div>
   </div>
+
+  <div class="footer footer-styler is-flex is-justify-content-center flex-direction-row">
+    <div class="columns is-multiline is-flex is-justify-content-center">
+<p class="columns tag tag-footer-style is-success is-normal"><i class="fa-solid fa-pen"></i>&nbsp;&nbsp;Creada por Gustavo Jiménez</p>
+<a class="columns tag tag-footer-style is-info is-normal" href="https://www.linkedin.com/in/gustavojimeneza/" ><i class="fa-brands fa-linkedin"> </i>&nbsp;&nbsp;Visita mi perdil de Linkedin </a>
+</div>
+</div>
+
+
 </template>
 
 <script setup>
@@ -129,10 +138,11 @@ const validarMail = () => {
 }
 
 .container-general {
-  margin-bottom: 50px;
+  margin-bottom: 0px;
   background-image: url(../Images/dot-background.jpg);
   background-size: 30%;
   padding: 50px;
+
 }
 .boton-registro {
   display: flex;
@@ -159,4 +169,14 @@ margin-bottom: 10px;
 font-size: small;
 }
 
+
+.tag-footer-style {
+  margin: 5px;
+}
+
+.footer-styler {
+  background-image: url(../Images/diagonal-background-light.png);
+    
+ 
+}
 </style>
