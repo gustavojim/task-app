@@ -118,8 +118,11 @@
   };
  
   </script>
+
+
   <style scoped>
-.container-login-register {
+
+.container-login-register{
   margin-top: 50px;
   background-color:rgb(185, 191, 183);
   border-radius: 30px;
@@ -129,7 +132,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .texto-registro {
@@ -141,4 +143,6 @@ font-size: small;
 .section-first-register {
   background-image: url("../Images/dots.png");
   background-size: 10%;
-}
+}  
+
+</style>
