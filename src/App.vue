@@ -12,6 +12,11 @@ import { login, newTask} from './api'
 import { useAuthStore } from './store/auth'
 import { useRouter } from 'vue-router'
 
+
+
+
+
+
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_KEY)
 const authStore = useAuthStore();
 const router = useRouter();
@@ -21,6 +26,10 @@ onMounted(async () => {
     router.push( {name: 'login'})
 }
 })
+
+
+
+
 
 </script>
 

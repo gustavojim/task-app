@@ -49,6 +49,19 @@ import TaskList from "../components/TaskList.vue";
 
 const authStore = useAuthStore();
 const router = useRouter();
+
+const onClick = async () => {
+  let logOutResult = await logOut();
+  if (logOutResult === true) {
+    console.log("log out succesfull");
+    router.push({ name: "login" });
+    authStore.logout();
+    console.log(authStore.id);
+  } else {
+    console.log("something went wrong");
+  }
+};
+
 </script>
 
 <style scoped>

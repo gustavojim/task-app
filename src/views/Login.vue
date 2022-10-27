@@ -75,12 +75,15 @@ import { ref } from "vue";
 import { useRouter } from "vue-router";
 import { login, registro } from "../api/index";
 import { useAuthStore } from "../store/auth";
+
+
 const authStore = useAuthStore();
 const router = useRouter();
 const email = ref("");
 const emailError = ref(false);
 const password = ref("");
 const passwordError = ref(false);
+
 
 const onSubmit = async () => {
   if (validarMail(email) === true) emailError.value = false;
