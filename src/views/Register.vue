@@ -1,11 +1,17 @@
 <template>
-    <div class="section">
-      <div class="box has-background-success-light">
-        <h1 class="title is-3">Register</h1>
-        <form @submit.prevent="onSubmit">
+    <div class="section section-first-register">
+      <div class="container container-login-register  is-max-desktop">
+      
+      <br>
+        <h1 class="title tag is-large is-warning is-flex">Fill this form to register</h1>
+        
+
+        <div class="container is-fluid ">
+
+        <form @submit.prevent="onSubmit" class="form-estilo">
           <div class="field">
             <label class="label">Name</label>
-            <div class="control">
+            <div class="control ">
               <input
                 v-model="name"
                 :class="{ input: true, 'is-danger': nameError }"
@@ -43,18 +49,27 @@
               </p>
             </div>
           </div>
+          <br>
           <div class="field">
-            <div class="control">
-              <input class="button is-link" type="submit" placeholder="Text input" value=""
+            <div class="control is-flex is-justify-content-center">
+              <input class="button is-responsive is-rounded is-normal is-focus is-dark" type="submit" placeholder="Text input" value="Sign up!"
               />
             </div>
           </div>
         </form>
-        <div class="is-flex"> 
-          <p>Have an account? </p>
-          <router-link class="has-text-weight-bold" :to="{ name: 'login' }">LOGIN</router-link></div>
+
+</div>
+<br>
+        <div class="is-flex is-flex-direction-column"> 
+          <p class="texto-registro">If you have an account, login here: </p>
+          <router-link class="tag is-success is-light has-text-weight-bold" :to="{ name: 'login' }">LOGIN</router-link></div>
+          <br>
       </div>
     </div>
+
+
+
+
   </template>
   <script setup>
   import { ref } from "vue";
@@ -103,4 +118,27 @@
   };
  
   </script>
-  <style scoped></style>
+  <style scoped>
+.container-login-register {
+  margin-top: 50px;
+  background-color:rgb(185, 191, 183);
+  border-radius: 30px;
+  padding: 20px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.texto-registro {
+  color: white;
+margin-bottom: 10px;
+font-size: small;
+}
+
+.section-first-register {
+  background-image: url("../Images/dots.png");
+  background-size: 10%;
+}

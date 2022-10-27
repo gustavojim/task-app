@@ -1,7 +1,5 @@
-
 <template>
 
-  <NavBar />
 
 <div class="section section-first">
 
@@ -12,13 +10,9 @@
 
 <div class="column  columns-box-task is-flex is-flex-direction-column is-align-items-center">
 
-
-  
-
-  
   <form  class="box m-5m new-task-style" @submit.prevent="onSubmit">
 
-
+    <h1 class="tag title is-small is-warning is-light is-flex is-justify-content">Create and Save your task</h1>
   <input v-model="title" 
   class="input " 
   type="text" 
@@ -29,9 +23,16 @@
     class="textarea mt-4"
     placeholder="Explain the task"
   ></textarea>
+
+
+
+
   <div class="button-box">
-  <button class="button is-warning is-rounded button-style-save mt-4 "><i class="fa-solid fa-floppy-disk"></i></button>
+    <button class="button is-warning is-rounded button-style-save mt-4 "><i class="fa-solid fa-floppy-disk"></i></button>
+
+
 </div>
+
 </form>
 
 
@@ -55,8 +56,8 @@
 
 <div class="section section-background">
 
-<div class="container container-style is-fluid">
-  <div class="notification is-warning">
+<div class="container is-flex is-justify-content-center">
+  <div class="tag tag-estilo is-large is-warning">
     <i class="fa-solid fa-list-check"></i>
     &nbsp;&nbsp;Review your tasks:
   </div>
@@ -211,6 +212,7 @@ const clickToFilter3 = () => {
   background-image: url("../Images/dot-background.jpg");
   background-blend-mode:hue;
   background-size: 40%;
+  height: 500px;
 }
 
 .quote-style {
@@ -259,19 +261,19 @@ border-style:dashed;
 padding: 20px;
 }
 
-.container-style {
-max-width: 850px !important;
-min-width: 300px !important;
-text-align:center;
-}
+
+
 
 .new-task-style{
- margin-top: 40px;
+
   width: 100%;
   max-width: 800px;
-  background-color: rgb(154, 182, 155);
+  background-color: rgba(190, 186, 186, 0.835);
 
 }
+
+
+
 
 .button-style-save{
   width: 70px !important;
@@ -313,6 +315,14 @@ color: rgb(138, 132, 132);
 margin-left: 30PX;
 margin-right: 70PX;
 position:sticky;
+height: 400px;
+}
+
+
+
+.tag-estilo {
+min-width: 290px;
+height: 70px;
 }
 
 

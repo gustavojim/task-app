@@ -1,11 +1,14 @@
 <template class="background-total">
   <div class="container is-fluid container-general ">
     <div class="container container-login is-max-desktop">
-      <div class="container container-login-dos is-fluid">
+      <div class="container container-login-dos ">
         
-        <br />
-        <h1 class="title">Task list!</h1>
-        <h2 class="subtitle">A new order for your life!</h2>
+        <br/>
+   
+      
+        <p class="title tag is-large is-warning is-flex"><i class="fa-regular fa-hand-spock"></i>&nbsp;&nbsp;Welcome to Taski !</p>
+
+       
         <br>
 
       </div>
@@ -112,7 +115,7 @@ const validarMail = () => {
 <style scoped>
 .container-login {
   margin-top: 50px;
-  background-color:rgb(186, 193, 183);
+  background-color:rgb(185, 191, 183);
   border-radius: 30px;
   padding: 20px;
   display: flex;
@@ -152,7 +155,5 @@ const validarMail = () => {
 margin-bottom: 10px;
 font-size: small;
 }
-
-
 
 </style>

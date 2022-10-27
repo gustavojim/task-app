@@ -235,7 +235,7 @@ margin: 5px;
 .card-edit-footer {
 display: flex;
 justify-content: center;
-background-color: rgb(201, 198, 189);
+background-color: rgba(253, 247, 209, 0.538);
 margin-top: 5px;
 
 }
@@ -249,10 +249,10 @@ font-family: 'Roboto', sans-serif;
 }
 
 .card-header-style {
-    background-color: rgb(228, 227, 221);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 5px;
     font-family: 'Roboto', sans-serif;
-    padding: 5px;
+    padding: 2px;
 
     
 }
